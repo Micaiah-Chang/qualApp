@@ -1,7 +1,13 @@
 # Django settings for qualPrep project.
 
+<<<<<<< HEAD
 PATH_TO_PROJECT = './'
 TEMPORARY_ROOT = './/db.files/tmp/'
+=======
+PATH_TO_PROJECT = '/home/django/qualApp/'
+TEMPORARY_ROOT = '/home/django/qualApp/db.files/tmp/'
+ROOT_URLCONF = 'qualApp.urls'
+>>>>>>> 8f588a546de21a55ebb03d767fa0e1616ac44e47
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -31,7 +37,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/django/qualPrep/db.sqlite3',                      # Or path to database file if using sqlite3.
+        'NAME': PATH_TO_PROJECT + 'db.sqlite3',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -127,7 +133,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'qualPrep.urls'
 
 TEMPLATE_DIRS = (
 	PATH_TO_PROJECT+'templates',
