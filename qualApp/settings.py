@@ -1,10 +1,7 @@
 # Django settings for qualPrep project.
 
-
-PATH_TO_PROJECT = '/home/newbie/Documents/qualProj/'
-TEMPORARY_ROOT = PATH_TO_PROJECT + 'db.files/tmp/'
-ROOT_URLCONF = 'qualApp.urls'
-
+PATH_TO_PROJECT = './'
+TEMPORARY_ROOT = './/db.files/tmp/'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -34,7 +31,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': PATH_TO_PROJECT + 'db.sqlite3',                      # Or path to database file if using sqlite3.
+        'NAME': '/home/django/qualPrep/db.sqlite3',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -98,7 +95,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-	PATH_TO_PROJECT + "db.files",
+	"/home/django/qualPrep/db.files",
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -130,6 +127,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
+ROOT_URLCONF = 'qualPrep.urls'
 
 TEMPLATE_DIRS = (
 	PATH_TO_PROJECT+'templates',
@@ -149,7 +147,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
-    #'south', # for database migration
+    # 'south', # for database migration
     'qualApp', # for THE QUAL APP!!
     'accounts', # simple custom account handling
 )
@@ -162,15 +160,9 @@ INSTALLED_APPS = (
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-    },
     'filters': {
-        'require_debug_false': { '()': 'django.utils.log.RequireDebugFalse', 
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
         }
     },
     'handlers': {
@@ -179,8 +171,12 @@ LOGGING = {
             'class': 'django.utils.log.AdminEmailHandler',
             'filters': ['require_debug_false']
         }
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
     }
-
 }
-
-   
