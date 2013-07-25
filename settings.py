@@ -1,8 +1,8 @@
 # Django settings for qualPrep project.
 
-PATH_TO_PROJECT = '/home/michael/git/qualSite/'
+PATH_TO_PROJECT = '/home/newbie/Documents/qualProj/'
 TEMPORARY_ROOT = PATH_TO_PROJECT + 'db.files/tmp/'
-ROOT_URLCONF = 'qualSite.urls'
+ROOT_URLCONF = 'qualApp.urls'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
