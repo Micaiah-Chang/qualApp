@@ -2,6 +2,7 @@
 
 PATH_TO_PROJECT = '/home/newbie/Documents/qualProj/'
 TEMPORARY_ROOT = PATH_TO_PROJECT + 'db.files/tmp/'
+
 ROOT_URLCONF = 'qualProj.urls'
 
 DEBUG = True
